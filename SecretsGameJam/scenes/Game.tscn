@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Art/BackGround.png" type="Texture" id=1]
+[ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Ruins1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Snow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Music.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Tree1.tscn" type="PackedScene" id=6]
+
+[node name="Game" type="Node2D"]
+
+[node name="BackGround" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Control" parent="BackGround" instance=ExtResource( 2 )]
+margin_left = 0.749146
+margin_right = 0.749146
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="YSort" type="YSort" parent="Trees"]
+
+[node name="Tree1" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 104.652, 248.194 )
+z_index = 1
+
+[node name="Tree2" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 44.5477, 234.052 )
+
+[node name="Tree3" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 53.033, 341.533 )
+
+[node name="Tree4" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 59.5312, 148.106 )
+
+[node name="Tree11" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 89.1403, -21.1368 )
+
+[node name="Tree17" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( -16.4904, 142.928 )
+
+[node name="Tree18" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 194.771, 407.379 )
+
+[node name="Tree19" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 106.371, 433.599 )
+
+[node name="Tree20" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 143.828, 390.149 )
+
+[node name="Tree21" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 280.174, 375.915 )
+
+[node name="Tree16" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 147.996, 157.111 )
+
+[node name="Tree5" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 79.1959, 127.986 )
+
+[node name="Tree6" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 38.8908, 43.8407 )
+
+[node name="Tree7" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 342.947, 24.7488 )
+
+[node name="Tree8" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 243.952, 38.1838 )
+
+[node name="Tree9" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 142.128, 41.7193 )
+
+[node name="Tree10" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 179.605, 106.773 )
+
+[node name="Tree12" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 352.139, 331.633 )
+
+[node name="Tree13" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 354.26, 210.718 )
+
+[node name="Tree14" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 281.429, 139.3 )
+
+[node name="Tree15" parent="Trees/YSort" instance=ExtResource( 6 )]
+position = Vector2( 327.391, 102.531 )
+
+[node name="Ruins1" parent="." groups=[
+"Ruins",
+] instance=ExtResource( 3 )]
+position = Vector2( 112.376, 180.386 )
+
+[node name="CurrentStats" parent="Ruins1" index="2"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -112.303
+margin_top = 144.839
+margin_right = 72.6969
+margin_bottom = 219.839
+
+[node name="Unexplored" parent="Ruins1" index="3"]
+visible = false
+margin_left = -110.879
+margin_top = 148.756
+margin_right = 8.12141
+margin_bottom = 218.756
+
+[node name="Snow" parent="." instance=ExtResource( 4 )]
+
+[node name="Music" parent="." instance=ExtResource( 5 )]
+
+[editable path="BackGround/Control"]
+
+[editable path="Ruins1"]

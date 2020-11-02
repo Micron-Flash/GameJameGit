@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Art/Ruin1.png" type="Texture" id=1]
+[ext_resource path="res://Art/StatShow.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Ruins_Manager.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Campsite.tscn" type="PackedScene" id=4]
+
+[node name="Ruins1" type="Node2D"]
+script = ExtResource( 3 )
+cost_to_open = 50
+first_floor_cost = 75
+
+[node name="Campsite" parent="." instance=ExtResource( 4 )]
+position = Vector2( 183.742, 55.9559 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentStats" type="TextureRect" parent="."]
+margin_left = -0.602173
+margin_top = 174.738
+margin_right = 184.398
+margin_bottom = 249.738
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Label" parent="CurrentStats"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 177.0
+margin_bottom = 72.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Floors Unlocked:0
+Gold per click: 1
+Treasure Chance: .2%
+Artifact Chance:0.01%
+"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unexplored" type="TextureRect" parent="."]
+margin_left = 3.04893
+margin_top = 179.748
+margin_right = 122.049
+margin_bottom = 249.748
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Unexplored"]
+margin_left = 4.76221
+margin_top = 0.396851
+margin_right = 111.762
+margin_bottom = 69.3969
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Click To explore
+$100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_TextureButton_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

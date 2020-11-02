@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/airtone_-_midwinter.wav-f5ccf588679cef80ea7b3623d9a88f87.sample"
+
+[deps]
+
+source_file="res://Audio/airtone_-_midwinter.wav"
+dest_files=[ "res://.import/airtone_-_midwinter.wav-f5ccf588679cef80ea7b3623d9a88f87.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
