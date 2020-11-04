@@ -5,31 +5,21 @@ export var money = 50
 export var treasure = 0
 export var artifacts = 0
 export var rate = 0
-var _timer = null
+export var speed = 4
+var loop_timer = null
+var single_timer
 var ruins = null
-
+signal start_trip()
 signal new_money(money,treasure,artifacts)
 
 func _ready():
 	emit_signal("new_money",money,treasure,artifacts)
-	_timer = Timer.new()
-	add_child(_timer)
-	
-	_timer.connect("timeout", self, "_on_Timer_timeout")
-	_timer.set_wait_time(.1)
-	_timer.set_one_shot(false) # Make sure it loops
-	_timer.start()
-
-
-func _on_Timer_timeout():
-	rate = 0
-	for ruin in get_tree().get_nodes_in_group("Ruins"):
-		rate += ruin.rate*ruin.gold_pc
-	money += rate/10
-	emit_signal("new_money",money,treasure,artifacts)
 
 func get_current_money():
 	return money
+
+func get_speed():
+	return speed
 
 func add_money(amount):
 	money += amount
@@ -42,6 +32,10 @@ func remove_money(amount):
 func update_rate(amount):
 	rate += amount
 
+func finish_trip(amount):
+	money += amount
+	emit_signal("new_money",money,treasure,artifacts)
+	
 func check_amount(amount):
 	if amount <= money:
 		return true

@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Art/Ruin1.png" type="Texture" id=1]
 [ext_resource path="res://Art/StatShow.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Ruins_Manager.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Campsite.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 108.614, 87.3927, 0, 0, 0, 0, 123.103, 96.5271, 0, 0, 0, 0, 128.458, 99.9919, 0, 0, 0, 0, 129.718, 104.402, 0, 0, 0, 0, 133.498, 108.181, 0, 0, 0, 0, 144.837, 116.056, 0, 0, 0, 0, 156.806, 125.19, 0, 0, 0, 0, 176.965, 127.395, 0, 0, 0, 0, 191.454, 120.151, 0, 0, 0, 0, 196.809, 111.016, 0, 0, 0, 0, 195.234, 93.3773, 0, 0, 0, 0, 192.084, 88.9676 )
+}
 
 [node name="Ruins1" type="Node2D"]
 script = ExtResource( 3 )
@@ -77,6 +82,9 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_TextureButton_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
