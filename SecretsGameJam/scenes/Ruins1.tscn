@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Art/Ruin1.png" type="Texture" id=1]
 [ext_resource path="res://Art/StatShow.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Ruins_Manager.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Campsite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/PixelFont2.tres" type="DynamicFont" id=5]
 
 [node name="Ruins1" type="Node2D"]
 script = ExtResource( 3 )
@@ -39,7 +40,7 @@ margin_left = 10.0
 margin_top = 5.0
 margin_right = 177.0
 margin_bottom = 72.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
 text = "Floors Unlocked:0
 Gold per click: 1
 Treasure Chance: .2%
@@ -69,7 +70,7 @@ margin_left = 4.76221
 margin_top = 0.396851
 margin_right = 111.762
 margin_bottom = 69.3969
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
 text = "Click To explore
 $100"
 align = 1
