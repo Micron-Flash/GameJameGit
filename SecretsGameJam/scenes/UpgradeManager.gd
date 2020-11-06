@@ -8,6 +8,3 @@ extends VBoxContainer
 func _ready():
 	pass
 
-
-func _on_Upgrade1_pressed():
-	pass
