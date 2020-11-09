@@ -15,8 +15,8 @@ export var gpc_upgrade_amount = 0
 export var a_rates = {
 	0:0,
 	1:0,
-	2:0.2,
-	3:0.5
+	2:0.02,
+	3:0.05
 }
 export var t_rates = {
 	0:0,

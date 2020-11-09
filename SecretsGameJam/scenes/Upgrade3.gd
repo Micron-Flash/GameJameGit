@@ -15,7 +15,7 @@ func _ready():
 	self.disabled = true
 	description.visible = false
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if MoneyManager.get_rate() >= unlock_rate:
 		self.disabled = false
 		description.visible = true
@@ -38,7 +38,10 @@ func _on_Upgrade3_pressed():
 		cost = int(cost*upgrade_cost_ratio)
 		update_description()
 		current_level += 1
+		if current_level == 2:
+			GameState.story_playing(1)
 		if current_level >= max_levels:
+			GameState.story_playing(2)
 			self.hide()
 
 

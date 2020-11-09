@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Art/Charachter.png" type="Texture" id=1]
+[ext_resource path="res://Art/Charaters.png" type="Texture" id=1]
 [ext_resource path="res://addons/GodotTIE/text_interface_engine.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Story.gd" type="Script" id=3]
 [ext_resource path="res://Fonts/PixelFont2.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Audio/SpeahWAb3.wav" type="AudioStream" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 4, 4, 363, 74 )
 
 [node name="Story" type="Node2D"]
 script = ExtResource( 3 )
@@ -19,11 +23,11 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
-margin_left = -83.315
-margin_top = -3.20486
-margin_right = 278.685
-margin_bottom = 69.7951
-texture = ExtResource( 1 )
+margin_left = -83.0
+margin_top = -4.0
+margin_right = 280.0
+margin_bottom = 70.0
+texture = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

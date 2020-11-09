@@ -15,7 +15,7 @@ func _ready():
 	self.disabled = true
 	description.visible = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	if MoneyManager.get_ruins_gpc(id) >= unlock_gpc:
 		self.disabled = false

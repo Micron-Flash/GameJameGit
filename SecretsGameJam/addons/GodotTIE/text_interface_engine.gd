@@ -132,6 +132,7 @@ func get_text(): # Get current text on Label
 func set_turbomode(s): # Print stuff in the maximum velocity and ignore breaks
 	_turbo = s;
 
+
 # Careful when changing fonts on-the-fly! It might break the text if there is something
 # already printed!
 func set_font_bypath(str_path): # Changes the font of the text; weird stuff will happen if you use this function after text has been printed

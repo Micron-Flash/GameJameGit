@@ -9,7 +9,7 @@ func _ready():
 	for child in self.get_children():
 		paths.append(child)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var rng_num = rng.randi_range(0, 10000)
 	var rng_path = rng.randi_range(0, paths.size()-1)
 	if rng_num <= chance:

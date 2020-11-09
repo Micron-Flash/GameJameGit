@@ -17,7 +17,7 @@ func update_level():
 	current_level += 1
 	upgrade_multiplier = current_level*2
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	if not MoneyManager.check_amount(cost):
 		self.modulate = Color(1,1,1,.25)
@@ -28,7 +28,7 @@ func _on_Upgrade1_pressed():
 	if MoneyManager.check_amount(cost):
 		MoneyManager.remove_money(cost)
 		MoneyManager.upgrade_ruins_gpc(id,(base_upgrade_amount*upgrade_multiplier))
-		cost = int(cost*(upgrade_cost_ratio+(current_level*0.75)))
+		cost = int(cost*(upgrade_cost_ratio))
 		update_description()
 
 

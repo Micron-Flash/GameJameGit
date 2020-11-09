@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Charachte4.png-c53d946d5e221596b3414175e3692341.res"
+group_file="res://Art/Charaters.png"
+valid=true
+[deps]
+
+
+source_file="res://Art/Charachte4.png"
+dest_files=[ "res://.import/Charachte4.png-c53d946d5e221596b3414175e3692341.res" ]
+
+[params]
+
+atlas_file="res://Art/Charaters.png"
+import_mode=0

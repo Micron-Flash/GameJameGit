@@ -335,10 +335,10 @@ margin_bottom = 219.839
 
 [node name="Unexplored" parent="Ruins1" index="3"]
 visible = false
-margin_left = -110.879
-margin_top = 148.756
-margin_right = 8.12141
-margin_bottom = 218.756
+margin_left = 19.9353
+margin_top = -68.1555
+margin_right = 138.936
+margin_bottom = 1.84453
 
 [node name="Snow" parent="." instance=ExtResource( 4 )]
 

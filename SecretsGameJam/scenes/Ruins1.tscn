@@ -53,10 +53,10 @@ __meta__ = {
 }
 
 [node name="Unexplored" type="TextureRect" parent="."]
-margin_left = 3.04893
-margin_top = 179.748
-margin_right = 122.049
-margin_bottom = 249.748
+margin_left = 17.8814
+margin_top = -68.6961
+margin_right = 136.881
+margin_bottom = 1.30392
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1

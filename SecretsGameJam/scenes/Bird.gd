@@ -17,7 +17,7 @@ func _start_tween():
 	tween.interpolate_property(self, "unit_offset", tween_values[0] , tween_values[1], speed ,Tween.TRANS_LINEAR, Tween.EASE_IN)    
 	tween.start()
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	if tween_values[0] == 0:
 		sprite.animation = "Still"
 		var t = Timer.new()

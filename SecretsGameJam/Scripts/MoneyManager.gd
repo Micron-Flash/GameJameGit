@@ -88,7 +88,6 @@ func run_rng():
 	print("Treasure : "+str(t_rng))
 	if a_rng <= a_rate:
 		artifacts +=1
-		GameState.story_playing(1)
 	if t_rng <= t_rate:
 		treasure +=1
 
