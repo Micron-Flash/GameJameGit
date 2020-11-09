@@ -55,6 +55,7 @@ signal enter_break() # When the engine stops on a break
 signal resume_break() # When the engine resumes from a break
 signal tag_buff(tag) # When the _buffer reaches a buff which is tagged
 signal buff_cleared() # When the buffer's been cleared of text
+signal words()
 # ===============================================
 
 func buff_debug(f, lab = false, arg0 = null, push_front = false): # For simple debug purposes; use with care
@@ -214,6 +215,7 @@ func _physics_process(delta):
 					if(AUTO_SKIP_WORDS and (o["buff_text"][0] == " " or _buff_beginning)):
 						_skip_word()
 					_label_print(o["buff_text"][0])
+					
 					_buff_beginning = false
 					o["buff_text"] = o["buff_text"].right(1)
 					if(_max_lines_reached == true):
@@ -229,6 +231,7 @@ func _physics_process(delta):
 					if(AUTO_SKIP_WORDS and (o["buff_text"][0] == " " or _buff_beginning)):
 						_skip_word()
 					_label_print(o["buff_text"][0])
+					emit_signal("words")
 					_buff_beginning = false
 					_output_delay -= _output_delay_limit
 					o["buff_text"] = o["buff_text"].right(1)

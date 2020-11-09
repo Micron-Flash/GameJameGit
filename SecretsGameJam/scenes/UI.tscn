@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Art/Board.png" type="Texture" id=1]
 [ext_resource path="res://Art/Menu.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://scenes/Upgrade2.gd" type="Script" id=6]
 [ext_resource path="res://Fonts/PixelFont2.tres" type="DynamicFont" id=7]
 [ext_resource path="res://scenes/Upgrade3.gd" type="Script" id=8]
+[ext_resource path="res://Art/Lock.png" type="Texture" id=9]
+[ext_resource path="res://Art/Info.png" type="Texture" id=10]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -83,7 +85,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TextureRect/ScrollContainer"]
 margin_right = 150.0
-margin_bottom = 158.0
+margin_bottom = 374.0
 script = ExtResource( 4 )
 
 [node name="Upgrade1" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer"]
@@ -91,16 +93,33 @@ margin_right = 150.0
 margin_bottom = 50.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 9 )
 script = ExtResource( 5 )
+upgrade_cost_ratio = 1.2
+cost = 25
 
 [node name="Description" type="Label" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade1"]
-margin_left = 3.0
-margin_top = 2.0
-margin_right = 147.0
-margin_bottom = 48.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -9.0
 custom_fonts/font = ExtResource( 7 )
+text = "+3 Gold brought back"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade1"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -14.0
+margin_top = 5.0
+margin_right = -4.0
+margin_bottom = 10.0
+mouse_default_cursor_shape = 16
+toggle_mode = true
+texture_normal = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -111,16 +130,33 @@ margin_right = 150.0
 margin_bottom = 104.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 9 )
 script = ExtResource( 6 )
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade2"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -14.0
+margin_top = 5.0
+margin_right = -4.00003
+margin_bottom = 10.0
+mouse_default_cursor_shape = 16
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Description" type="Label" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade2"]
 margin_left = 3.0
 margin_top = 2.0
-margin_right = 147.0
-margin_bottom = 48.0
+margin_right = 142.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 7 )
+text = "2000 g "
 align = 1
 valign = 1
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -130,21 +166,180 @@ margin_top = 108.0
 margin_right = 150.0
 margin_bottom = 158.0
 mouse_default_cursor_shape = 2
+disabled = true
 texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 9 )
 script = ExtResource( 8 )
 
 [node name="Description" type="Label" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade3"]
 margin_left = 3.0
-margin_top = 2.0
+margin_top = 1.0
 margin_right = 147.0
-margin_bottom = 48.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 7 )
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade3"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -14.0
+margin_top = 5.70352
+margin_right = -4.0
+margin_bottom = 10.0
+mouse_default_cursor_shape = 16
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrade4" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer"]
+margin_top = 162.0
+margin_right = 150.0
+margin_bottom = 212.0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 9 )
+
+[node name="Description" type="Label" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade4"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 147.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 7 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade4"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -14.0
+margin_top = 5.70352
+margin_right = -4.0
+margin_bottom = 10.0
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrade5" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer"]
+margin_top = 216.0
+margin_right = 150.0
+margin_bottom = 266.0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 9 )
+
+[node name="Description" type="Label" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade5"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 147.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 7 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade5"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -14.0
+margin_top = 5.70352
+margin_right = -4.0
+margin_bottom = 10.0
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrade6" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer"]
+margin_top = 270.0
+margin_right = 150.0
+margin_bottom = 320.0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 9 )
+
+[node name="Description" type="Label" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade6"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 147.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 7 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade6"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -14.0
+margin_top = 5.70352
+margin_right = -4.0
+margin_bottom = 10.0
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrade7" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer"]
+margin_top = 324.0
+margin_right = 150.0
+margin_bottom = 374.0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 9 )
+
+[node name="Description" type="Label" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade7"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 147.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 7 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade7"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -14.0
+margin_top = 5.70352
+margin_right = -4.0
+margin_bottom = 10.0
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade1" to="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade1" method="_on_Upgrade1_pressed"]
+[connection signal="toggled" from="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade1/TextureButton" to="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade1" method="_on_TextureButton_toggled"]
 [connection signal="pressed" from="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade2" to="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade2" method="_on_Upgrade2_pressed"]
+[connection signal="toggled" from="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade2/TextureButton" to="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade2" method="_on_TextureButton_toggled"]
 [connection signal="pressed" from="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade3" to="MarginContainer/TextureRect/MoneyDisplay/CurrentInventory" method="_on_Upgrade3_pressed"]
 [connection signal="pressed" from="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade3" to="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade3" method="_on_Upgrade3_pressed"]
+[connection signal="toggled" from="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade3/TextureButton" to="MarginContainer/TextureRect/ScrollContainer/VBoxContainer/Upgrade3" method="_on_TextureButton_toggled"]

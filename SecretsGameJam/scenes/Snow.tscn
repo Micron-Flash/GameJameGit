@@ -5,11 +5,11 @@
 [node name="Snow" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2( 195, -10 )
-amount = 100
-lifetime = 12.0
+position = Vector2( 300, -410 )
+amount = 120
+lifetime = 24.0
 texture = ExtResource( 1 )
 emission_shape = 2
-emission_rect_extents = Vector2( 195, 0 )
+emission_rect_extents = Vector2( 300, 0 )
 gravity = Vector2( -1, 6 )
 angle_random = 0.6

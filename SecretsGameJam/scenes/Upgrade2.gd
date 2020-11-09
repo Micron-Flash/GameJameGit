@@ -5,19 +5,32 @@ export var upgrade_multiplier = 1
 export var unlock_gpc = 15
 export var current_level = 0
 export var id = 1
-export var cost = 1000
+export var cost = 1500
 onready var description = $Description
-
+onready var info_button = $TextureButton
 
 func _ready():
 	update_description()
 	self.modulate = Color(1,1,1,.25)
 	self.disabled = true
+	description.visible = false
 
 func _physics_process(delta):
+	
 	if MoneyManager.get_ruins_gpc(id) >= unlock_gpc:
-		self.modulate = Color(1,1,1,1)
 		self.disabled = false
+		description.visible = true
+		info_button.visible = true
+	else:
+		info_button.visible = false
+		self.modulate = Color(1,1,1,1)
+		self.disabled = true
+		description.visible = false
+		
+	if not MoneyManager.check_amount(cost) and self.disabled == false:
+		self.modulate = Color(1,1,1,.25)
+	else:
+		self.modulate = Color(1,1,1,1)
 
 func _on_Upgrade2_pressed():
 	if MoneyManager.check_amount(cost):
@@ -28,7 +41,7 @@ func _on_Upgrade2_pressed():
 
 
 func update_description():
-	description.text = "Hire a worker:"+str(MoneyManager.get_ruins_gpc(id)) + "/sec\n$"+comma_sep(cost)
+	description.text = "Buy a minecart\n"+comma_sep(cost) + " Gold"
 
 func comma_sep(number):
 	var string = str(number)
@@ -41,3 +54,10 @@ func comma_sep(number):
 		res += string[i]
 
 	return res
+
+
+func _on_TextureButton_toggled(button_pressed):
+	if button_pressed and self.disabled == false:
+		description.text = "Minecarts bring "+str(upgrade_multiplier)+ " click\n worth of gold every " + str(MoneyManager.get_time_mult()) + "s\nTotal Carts: " + str(MoneyManager.get_ruins_rate(id))
+	else:
+		update_description()

@@ -1,7 +1,8 @@
 extends TextureButton
 
 export var upgrade_cost_ratio = 1.25
-export var upgrade_multiplier = 2
+export var base_upgrade_amount = 2
+export var upgrade_multiplier = 1
 export var current_level = 0
 export var id = 1
 export var cost = 75
@@ -9,18 +10,31 @@ onready var description = $Description
 
 
 func _ready():
+	MoneyManager.connect("new_level",self,"update_level")
 	update_description()
+
+func update_level():
+	current_level += 1
+	upgrade_multiplier = current_level*2
+
+func _physics_process(delta):
+	
+	if not MoneyManager.check_amount(cost):
+		self.modulate = Color(1,1,1,.25)
+	else:
+		self.modulate = Color(1,1,1,1)
 
 func _on_Upgrade1_pressed():
 	if MoneyManager.check_amount(cost):
 		MoneyManager.remove_money(cost)
-		MoneyManager.set_ruins_gpc(id,upgrade_multiplier)
-		cost = int(cost*upgrade_cost_ratio)
+		MoneyManager.upgrade_ruins_gpc(id,(base_upgrade_amount*upgrade_multiplier))
+		cost = int(cost*(upgrade_cost_ratio+(current_level*0.75)))
 		update_description()
 
 
 func update_description():
-	description.text = "Gold per click:"+str(MoneyManager.get_ruins_gpc(id)+upgrade_multiplier) + "\n$"+comma_sep(cost)
+	description.text = "Larger Treasure Sacks\n"+comma_sep(cost)+" Gold"
+	
 
 
 func comma_sep(number):
@@ -34,3 +48,11 @@ func comma_sep(number):
 		res += string[i]
 
 	return res
+
+
+func _on_TextureButton_toggled(button_pressed):
+	print(button_pressed)
+	if button_pressed:
+		description.text = "+" + str(base_upgrade_amount*upgrade_multiplier) + ' Gold per Click'
+	else:
+		update_description()
