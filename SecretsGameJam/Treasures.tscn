@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Art/Board.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Treasures.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/PixelFont2.tres" type="DynamicFont" id=4]
+
+[node name="Treasures" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 68.0
+margin_top = 38.0
+margin_right = 532.0
+margin_bottom = 362.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+margin_right = 464.0
+margin_bottom = 324.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+
+[node name="Label" type="Label" parent="MarginContainer/TextureRect"]
+margin_left = 3.75255
+margin_top = -9.96614
+margin_right = 228.753
+margin_bottom = 38.0339
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 4 )
+text = "Treasures:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MarginContainer/TextureRect"]
+margin_left = 5.74916
+margin_top = 125.529
+margin_right = 230.749
+margin_bottom = 171.529
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 4 )
+text = "Artifacts:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Treasure" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 86.5051
+margin_top = 91.5389
+margin_right = 297.505
+margin_bottom = 138.539
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Treasure"]
+margin_right = 210.0
+margin_bottom = 47.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spots" type="GridContainer" parent="Treasure/ScrollContainer"]
+columns = 10
+
+[node name="Artifacts" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 84.2576
+margin_top = 230.132
+margin_right = 295.258
+margin_bottom = 277.132
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Artifacts"]
+margin_right = 211.0
+margin_bottom = 47.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spots" type="GridContainer" parent="Artifacts/ScrollContainer"]
+columns = 10
+
+[node name="Back" type="TextureButton" parent="."]
+margin_right = 42.0
+margin_bottom = 42.0
+texture_normal = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Back"
+align = 1
+valign = 1
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

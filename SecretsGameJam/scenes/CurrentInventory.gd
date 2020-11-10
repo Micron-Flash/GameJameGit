@@ -4,8 +4,8 @@ extends Label
 func _ready():
 	MoneyManager.connect("new_money",self,"update_money")
 
-func update_money(money,treasure,artifacts):
-	self.text = "Gold: " + comma_sep(money)+"\nTreasures:"+str(treasure)+"\nArtifacts:"+str(artifacts)+""
+func update_money(money,treasure,m_treasure,artifacts,m_artifacts):
+	self.text = "Gold: " + comma_sep(money)+"\nTreasures:"+str(treasure)+"/"+str(m_treasure)+"\nArtifacts:"+str(artifacts)+"/"+str(m_artifacts)
 	
 func comma_sep(number):
 	var string = str(number)
