@@ -16,8 +16,8 @@ func _ready():
 func get_id():
 	return id
 	
-func set_type(id):
-	match id:
+func set_type(_id):
+	match _id:
 		0:
 			self.texture_normal = empty.texture
 		1:

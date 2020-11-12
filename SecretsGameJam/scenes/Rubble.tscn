@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Art/Rubble.png" type="Texture" id=1]
+[ext_resource path="res://Art/pictureLightMask2_thumb.png" type="Texture" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 23.7383, 28.7952, 8.30443, 35.2494, -28.0353, 18.2721, -12.0402, 12.3792 )
+
+[node name="Rubble" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -0.616905, -24.2412 )
+scale = Vector2( 3.53253, 2.80149 )
+texture = ExtResource( 2 )
+texture_scale = 0.1
+color = Color( 0.666667, 0.341176, 0.180392, 0.313726 )
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0.752941 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( -0.304695, -23.7443 )
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2( 0, -8 )
+color = Color( 0.803922, 0.227451, 0.227451, 0.403922 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )

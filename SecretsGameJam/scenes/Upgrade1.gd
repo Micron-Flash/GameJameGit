@@ -20,7 +20,7 @@ func update_level():
 func _physics_process(_delta):
 	
 	if not MoneyManager.check_amount(cost):
-		self.modulate = Color(1,1,1,.25)
+		self.modulate = Color(0,0,0,.25)
 	else:
 		self.modulate = Color(1,1,1,1)
 

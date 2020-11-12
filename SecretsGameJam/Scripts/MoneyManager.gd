@@ -6,14 +6,17 @@ var treasures = []
 export var m_treasure = 5
 export var m_artifacts = 2
 var artifacts = []
+export var gold_pc = 0
 export var rate = 0
 export var t_rate = 0
 export var a_rate = 0
 var _timer = null
+var boost_timer = null
 var ruins = null
 var rng = RandomNumberGenerator.new()
 export var time_multiplier = 1
-
+var rate_modifier = 1
+var bosted_items = []
 signal new_money(money,treasures,m_treasure,artifacts,m_artifacts)
 signal new_level()
 signal more_treasure(treasure)
@@ -29,25 +32,71 @@ func _ready():
 	_timer.set_one_shot(false) # Make sure it loops
 	_timer.start()
 
+func update_time_multiplyer(amount):
+	time_multiplier -= amount
+	_timer.set_wait_time(time_multiplier)
+	return
 
 func get_time_mult():
 	return time_multiplier
 
 func sub_time_mult(amount):
 	time_multiplier -= amount
+	return
+
+func timed_boost(time,boost,type):
+	boost_timer = Timer.new()
+	add_child(boost_timer)
+	boost_timer.set_wait_time(time)
+	boost_timer.set_one_shot(false) # Make sure it loops
+	match type:
+		'a_rate':
+			a_rate += boost
+			bosted_items.append(0)
+		't_rate':
+			t_rate += boost
+			bosted_items.append(1)
+		'gpc':
+			for ruin in get_tree().get_nodes_in_group("Ruins"):
+				ruin.boost_mult += boost
+			bosted_items.append(2)
+		'timer':
+			update_time_multiplyer(.15)
+			bosted_items.append(3)
+	boost_timer.start()
+	yield(boost_timer, "timeout")
+	match type:
+		'a_rate':
+			a_rate -= boost
+			bosted_items.erase(0)
+		't_rate':
+			t_rate -= boost
+			bosted_items.erase(1)
+		'gpc':
+			for ruin in get_tree().get_nodes_in_group("Ruins"):
+				ruin.boost_mult -= boost
+			bosted_items.erase(2)
+		'timer':
+			update_time_multiplyer(-.15)
+			bosted_items.erase(3)
+	boost_timer.queue_free()
+	return
+
 
 func _on_Timer_timeout():
 	rate = 0
 	a_rate = 0
 	t_rate = 0
 	for ruin in get_tree().get_nodes_in_group("Ruins"):
-		rate += ruin.rate*ruin.gold_pc
-		a_rate += ruin.a_rate
+		gold_pc = ruin.get_gold_pc()*rate_modifier
+		rate += (ruin.rate*gold_pc)
+		a_rate += ruin.a_rate 
 		t_rate += ruin.t_rate
 	money += rate
 	run_rng()
 	emit_signal("new_money",money,treasures.size(),m_treasure,artifacts.size(),m_artifacts)
-
+	return
+	
 func get_current_money():
 	return money
 
@@ -61,7 +110,8 @@ func remove_money(amount):
 	
 func update_rate(amount):
 	rate += amount
-
+	return
+	
 func get_rate():
 	return rate
 	
@@ -101,7 +151,7 @@ func run_rng():
 			var treasure_id = rng.randi_range(1, 3)
 			treasures.append(treasure_id) 
 			emit_signal("more_treasure",treasures)
-
+	return
 
 func get_treasure_list():
 	return treasures
@@ -115,7 +165,7 @@ func set_ruins_gpc(id,multiplier):
 			ruin.gold_pc(multiplier)
 		else:
 			continue
-			
+	return
 			
 			
 func upgrade_ruins_level(id):
@@ -125,32 +175,39 @@ func upgrade_ruins_level(id):
 			emit_signal("new_level")
 		else:
 			continue
+	return
 
 func get_ruins_gpc(id):
 	for ruin in get_tree().get_nodes_in_group("Ruins"):
 		if ruin.id == id:
-			return ruin.gold_pc
+			return ruin.get_gold_pc()
 		else:
 			continue
-			
+	return
+	
 func upgrade_ruins_gpc(id,amount):
 	for ruin in get_tree().get_nodes_in_group("Ruins"):
 		if ruin.id == id:
 			ruin.upgrade_gpc(amount)
-			
+	return
 
 func update_max_treasure(amount):
 	m_treasure += amount
 	emit_signal("new_money",money,treasures.size(),m_treasure,artifacts.size(),m_artifacts)
 	emit_signal("more_treasure",treasures)
+	return
 	
 func update_max_artifact(amount):
 	m_artifacts += amount
 	emit_signal("new_money",money,treasures.size(),m_treasure,artifacts.size(),m_artifacts)
 	emit_signal("more_artifacts",artifacts)
+	return
 	
 func get_max_treasure():
 	return m_treasure
 	
 func get_max_artifacts():
 	return m_artifacts
+	
+func get_boosted_items():
+	return bosted_items

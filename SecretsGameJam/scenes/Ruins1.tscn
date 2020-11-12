@@ -1,12 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Art/Ruin1.png" type="Texture" id=1]
 [ext_resource path="res://Art/StatShow.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Ruins_Manager.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Campsite.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fonts/PixelFont2.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Art/Door.png" type="Texture" id=6]
+[ext_resource path="res://Art/pictureLightMask2_thumb.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Light2D.gd" type="Script" id=8]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+cull_mode = 2
+polygon = PoolVector2Array( 101.022, 90.0017, 94.1529, 101.786, 106.951, 95.4365, 124.065, 103.522, 124.313, 108.83, 129.671, 111.41, 140.606, 105.169, 136.948, 101.807, 136.831, 96.6153, 120.667, 89.0053, 134.134, 82.1371, 111.042, 85.0539, 111.024, 72.9748, 109.003, 73.0338, 108.988, 73.963, 107.012, 74.0514, 107.012, 74.9511, 105.021, 75.0248, 105.051, 76.0129, 103.015, 76.0129, 103.015, 77.0158, 101, 77.0183 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 44.9715, 44.0655, 77.4528, 59.6396, 111.127, 43.5042, 78.4349, 26.5971 )
 
 [node name="Ruins1" type="Node2D"]
+position = Vector2( 0.176979, -1.17984 )
 script = ExtResource( 3 )
 cost_to_open = 50
 first_floor_cost = 75
@@ -14,9 +25,28 @@ first_floor_cost = 75
 [node name="Campsite" parent="." instance=ExtResource( 4 )]
 position = Vector2( 183.742, 55.9559 )
 
+[node name="Door" type="Sprite" parent="."]
+modulate = Color( 0.407843, 0.137255, 0.0980392, 0.756863 )
+position = Vector2( 107.932, 80.3117 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="Door"]
+position = Vector2( -3.74103, 4.64901 )
+texture = ExtResource( 7 )
+texture_scale = 0.2
+color = Color( 0.666667, 0.341176, 0.180392, 0.631373 )
+energy = 0.0
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 8 )
+
+[node name="Tween" type="Tween" parent="Door/Light2D"]
+
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 0.0662155
+margin_right = 156.066
+margin_bottom = 120.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 1 )
 __meta__ = {
@@ -24,10 +54,11 @@ __meta__ = {
 }
 
 [node name="CurrentStats" type="TextureRect" parent="."]
-margin_left = -0.602173
-margin_top = 174.738
-margin_right = 184.398
-margin_bottom = 249.738
+process_priority = 1
+margin_left = 27.2074
+margin_top = 161.972
+margin_right = 212.208
+margin_bottom = 236.972
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -78,6 +109,19 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="tween_completed" from="Door/Light2D/Tween" to="Door/Light2D" method="_on_Tween_tween_completed"]
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_TextureButton_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
