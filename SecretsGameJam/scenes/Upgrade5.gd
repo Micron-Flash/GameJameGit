@@ -1,6 +1,6 @@
 extends TextureButton
 
-export var upgrade_cost_ratio = 1.75
+export var upgrade_cost_ratio = 1.2
 export var boost = 1
 export var boost_type = 2
 export var boost_duration = 10

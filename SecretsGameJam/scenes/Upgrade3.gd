@@ -3,7 +3,7 @@ extends TextureButton
 export var upgrade_cost_ratio = 10
 export var current_level = 1
 export var unlock_rate = 100
-export var max_levels = 3
+export var max_levels = 5
 export var id = 1
 export var cost = 10000
 onready var description = $Description
@@ -40,8 +40,9 @@ func _on_Upgrade3_pressed():
 		current_level += 1
 		if current_level == 2:
 			GameState.story_playing(1)
-		if current_level >= max_levels:
+		if current_level == 5:
 			GameState.story_playing(2)
+		if current_level >= max_levels:
 			self.hide()
 
 

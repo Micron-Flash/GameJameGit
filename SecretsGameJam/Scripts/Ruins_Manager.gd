@@ -16,16 +16,20 @@ export var gpc_upgrade_amout = 0
 var tween_values = [Vector2(1,1), Vector2(1.01,1.01)]
 onready var time = $Timer
 export var a_rates = {
-	0:0,
-	1:0,
-	2:0.02,
-	3:0.05
+	0:10,
+	1:10,
+	2:10.02,
+	3:10.05,
+	4:0.07,
+	5:.09
 }
 export var t_rates = {
-	0:0,
-	1:0,
-	2:1,
-	3:1.5
+	0:10,
+	1:10, 
+	2:11,
+	3:11.5,
+	4:11.75, 
+	5:12   
 }
 onready var tween = $Tween
 onready var unexplored_board = $Unexplored

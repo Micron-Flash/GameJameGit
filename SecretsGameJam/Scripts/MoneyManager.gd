@@ -9,6 +9,7 @@ var artifacts = []
 export var gold_pc = 0
 export var rate = 0
 export var t_rate = 0
+export var treasure_price_mod = 1
 export var a_rate = 0
 var _timer = null
 var boost_timer = null
@@ -21,6 +22,7 @@ signal new_money(money,treasures,m_treasure,artifacts,m_artifacts)
 signal new_level()
 signal more_treasure(treasure)
 signal more_artifacts(artifacts)
+signal sell_treasure(id)
 
 func _ready():
 	emit_signal("new_money",money,treasures.size(),m_treasure,artifacts.size(),m_artifacts)
@@ -211,3 +213,12 @@ func get_max_artifacts():
 	
 func get_boosted_items():
 	return bosted_items
+
+func sell_item(id,base):
+	var add_amount = base * treasure_price_mod
+	add_money(add_amount)
+	treasures.remove(id)
+	emit_signal("more_treasure",treasures)
+
+func get_treasure_price_mod():
+	return treasure_price_mod

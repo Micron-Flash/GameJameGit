@@ -11,20 +11,26 @@ func _ready():
 	update_artifacts([0])
 	MoneyManager.connect("more_treasure",self,"update_treasure")
 	MoneyManager.connect("more_artifacts",self,"update_artifacts")
-
+	MoneyManager.connect("sell_treasure",self,"sell_treasure")
+	
 func update_treasure(treasure):
 	print('setting')
 	var max_slots = MoneyManager.get_max_treasure()
-	var slot_count = max_slots - grid.get_child_count()
-	for slots in range(slot_count):
+	for item in grid.get_children():
+		item.queue_free()
+	for slots in range(max_slots):
 		var new_slot = slot.instance()
 		grid.add_child(new_slot)
 		new_slot.set_type(0)
 		new_slot.id = slots
 	for item in range(treasure.size()):
+		print("item" + str(item))
 		for spot in grid.get_children():
+			print("spot" + str(spot.get_id()))
 			if spot.get_id() == item:
-				spot.set_type(treasure[spot.get_id()])
+				print("tres" + str(treasure[item]))
+				spot.set_type(treasure[item])
+				continue
 			else:
 				continue
 
@@ -43,6 +49,8 @@ func update_artifacts(artifacts):
 				spot.set_type(artifacts[spot.get_id()])
 			else:
 				continue
+
+
 
 func _on_Back_pressed():
 	camera.position = Vector2(0,0)
