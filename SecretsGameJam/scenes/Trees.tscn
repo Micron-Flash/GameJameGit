@@ -1,0 +1,576 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Tree1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Bush.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Rubble 2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Rubble.tscn" type="PackedScene" id=4]
+
+[node name="Trees" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Tree1" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 22.9298, 295.031 )
+
+[node name="Tree2" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 63.575, 120.483 )
+
+[node name="Tree3" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 53.033, 341.533 )
+
+[node name="Tree4" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 205.219, 78.1332 )
+
+[node name="Tree11" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 87.9511, 19.2962 )
+
+[node name="Tree17" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 10.8614, 63.2511 )
+
+[node name="Tree18" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 203.447, 394.031 )
+
+[node name="Tree19" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 106.371, 433.599 )
+
+[node name="Tree20" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 143.828, 390.149 )
+
+[node name="Tree21" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 280.174, 375.915 )
+
+[node name="Tree16" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 8.8588, 139.273 )
+
+[node name="Tree5" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 26.8708, 98.2558 )
+
+[node name="Tree6" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 38.8908, 43.8407 )
+
+[node name="Tree7" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 305.107, 35.6805 )
+
+[node name="Tree22" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 276.516, 83.6115 )
+
+[node name="Tree23" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 161.313, 76.0435 )
+
+[node name="Tree24" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 118.428, 98.7477 )
+
+[node name="Tree25" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 20.8837, 192.087 )
+
+[node name="Tree26" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 62.9285, 212.269 )
+
+[node name="Tree27" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 31.8153, 245.064 )
+
+[node name="Tree28" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 117.587, 144.997 )
+
+[node name="Tree29" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 168.881, 107.998 )
+
+[node name="Tree30" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 199.154, 153.406 )
+
+[node name="Tree31" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 157.109, 166.019 )
+
+[node name="Tree32" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 260.108, 129.27 )
+
+[node name="Tree33" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 274.834, 162.656 )
+
+[node name="Tree34" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 318.561, 115.566 )
+
+[node name="Tree35" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 350.515, 23.0671 )
+
+[node name="Tree36" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 358.924, 96.2251 )
+
+[node name="Tree37" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 377.424, 139.111 )
+
+[node name="Tree116" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 417.271, 322.634 )
+
+[node name="Tree117" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 475.639, 284.47 )
+
+[node name="Tree118" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 484.619, 343.399 )
+
+[node name="Tree133" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 440.893, 403.944 )
+
+[node name="Tree134" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 507.323, 383.762 )
+
+[node name="Tree135" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 579.64, 365.262 )
+
+[node name="Tree119" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 558.141, 327.123 )
+
+[node name="Tree120" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 533.446, 282.786 )
+
+[node name="Tree121" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 577.222, 238.449 )
+
+[node name="Tree122" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 507.63, 189.622 )
+
+[node name="Tree123" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 467.782, 209.826 )
+
+[node name="Tree124" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 434.67, 161.56 )
+
+[node name="Tree125" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 410.537, 105.437 )
+
+[node name="Tree126" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 445.333, 28.5484 )
+
+[node name="Tree127" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 482.374, 23.4973 )
+
+[node name="Tree128" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 505.385, 74.5694 )
+
+[node name="Tree129" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 546.916, 123.958 )
+
+[node name="Tree130" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 564.314, 209.265 )
+
+[node name="Tree131" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 571.61, 20.1299 )
+
+[node name="Tree132" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 564.875, 62.7835 )
+
+[node name="Tree41" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 610.061, 329.329 )
+
+[node name="Tree42" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 595.182, 131.254 )
+
+[node name="Tree86" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 620.21, 212.012 )
+
+[node name="Tree87" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 627.097, 268.693 )
+
+[node name="Tree88" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 647.756, 393.71 )
+
+[node name="Tree89" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 616.292, -1.84335 )
+
+[node name="Tree90" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 711.434, -23.5688 )
+
+[node name="Tree91" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 668.895, 8.1996 )
+
+[node name="Tree92" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 625.444, 113.081 )
+
+[node name="Tree93" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 653.163, 183.502 )
+
+[node name="Tree94" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 658.407, 67.3827 )
+
+[node name="Tree95" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 711.597, 59.8912 )
+
+[node name="Tree96" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 786.512, 52.3997 )
+
+[node name="Tree97" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 752.051, 2.20636 )
+
+[node name="Tree98" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 710.098, 390.268 )
+
+[node name="Tree99" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 957.319, 380.529 )
+
+[node name="Tree100" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1125.88, 382.776 )
+
+[node name="Tree101" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1037.48, 382.027 )
+
+[node name="Tree102" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 994.777, 334.831 )
+
+[node name="Tree103" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 851.689, 316.851 )
+
+[node name="Tree104" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 773.027, 364.048 )
+
+[node name="Tree105" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1155.84, 261.414 )
+
+[node name="Tree106" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1177.57, 152.786 )
+
+[node name="Tree107" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1187.31, 310.858 )
+
+[node name="Tree108" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1140.86, 105.59 )
+
+[node name="Tree109" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1178.32, 16.4403 )
+
+[node name="Tree110" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1121.38, 2.20638 )
+
+[node name="Tree111" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1044.97, 10.4471 )
+
+[node name="Tree112" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 973.052, 8.94877 )
+
+[node name="Tree113" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 875.662, -11.2784 )
+
+[node name="Tree114" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 949.828, -31.5055 )
+
+[node name="Tree115" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 822.472, -1.53939 )
+
+[node name="Tree43" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 372.934, 285.592 )
+
+[node name="Tree44" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -24.4175, 250.234 )
+
+[node name="Tree45" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -18.8052, -14.1053 )
+
+[node name="Tree46" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 18.7973, -44.4118 )
+
+[node name="Tree52" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 422.586, -23.7218 )
+
+[node name="Tree53" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 544.057, -19.7173 )
+
+[node name="Tree54" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 393.887, -5.70144 )
+
+[node name="Tree55" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 54.1706, -105.814 )
+
+[node name="Tree47" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 146.758, -28.1361 )
+
+[node name="Tree48" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 174.258, -2.31947 )
+
+[node name="Tree49" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 67.6244, -18.5952 )
+
+[node name="Tree50" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 219.881, -17.105 )
+
+[node name="Tree56" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 324.381, -47.605 )
+
+[node name="Tree58" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 47.2957, -330.636 )
+
+[node name="Tree59" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 78.8097, -252.149 )
+
+[node name="Tree60" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 47.2957, -212.31 )
+
+[node name="Tree61" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 110.324, -137.985 )
+
+[node name="Tree62" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 483.14, -63.6593 )
+
+[node name="Tree63" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 533.087, -113.606 )
+
+[node name="Tree64" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 492.654, -190.904 )
+
+[node name="Tree65" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 420.112, -135.012 )
+
+[node name="Tree66" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 201.893, -124.309 )
+
+[node name="Tree67" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 162.054, -231.337 )
+
+[node name="Tree68" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 130.54, -330.636 )
+
+[node name="Tree69" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 129.351, -257.5 )
+
+[node name="Tree70" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 86.5396, -180.202 )
+
+[node name="Tree71" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 468.87, -150.471 )
+
+[node name="Tree72" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 369.571, -111.228 )
+
+[node name="Tree73" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 357.679, -55.9295 )
+
+[node name="Tree74" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 556.871, -196.256 )
+
+[node name="Tree75" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 524.762, -268.203 )
+
+[node name="Tree76" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 474.816, -291.987 )
+
+[node name="Tree77" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 508.708, -242.04 )
+
+[node name="Tree78" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 178.109, -309.231 )
+
+[node name="Tree79" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -18.1106, -304.474 )
+
+[node name="Tree80" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 10.4303, -143.931 )
+
+[node name="Tree81" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1.51128, -239.067 )
+
+[node name="Tree82" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -6.21857, -106.471 )
+
+[node name="Tree83" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 596.115, -89.2273 )
+
+[node name="Tree84" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 611.574, -148.093 )
+
+[node name="Tree85" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 571.141, -61.2809 )
+
+[node name="Tree57" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 114.422, -53.0104 )
+
+[node name="Tree51" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 275.558, -20.1203 )
+
+[node name="Tree8" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 101.238, 190.964 )
+
+[node name="Tree9" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 81.4784, 70.8549 )
+
+[node name="Tree10" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 48.8195, 151.635 )
+
+[node name="Tree12" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 352.139, 331.633 )
+
+[node name="Tree13" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 311.606, 197.81 )
+
+[node name="Tree38" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 352.696, 150.094 )
+
+[node name="Tree39" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 416.208, 230.9 )
+z_index = 1
+
+[node name="Tree40" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 398.597, 48.5222 )
+
+[node name="Tree14" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 187.9, 28.206 )
+
+[node name="Tree15" type="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 267.533, 46.9873 )
+
+[node name="YSort" type="YSort" parent="YSort"]
+
+[node name="Rubble" type="Node2D" parent="YSort/YSort" instance=ExtResource( 4 )]
+position = Vector2( 231.504, 338.831 )
+
+[node name="Rubble2" type="Node2D" parent="YSort/YSort" instance=ExtResource( 4 )]
+position = Vector2( 388.056, 277.183 )
+
+[node name="Rubble3" type="Node2D" parent="YSort/YSort" instance=ExtResource( 4 )]
+position = Vector2( 343.654, 234.426 )
+
+[node name="Rubble7" type="Node2D" parent="YSort/YSort" instance=ExtResource( 4 )]
+position = Vector2( 7.27451, 137.485 )
+
+[node name="Rubble4" type="Node2D" parent="YSort/YSort" instance=ExtResource( 4 )]
+position = Vector2( 164.68, 188.292 )
+
+[node name="Rubble6" type="Node2D" parent="YSort/YSort" instance=ExtResource( 4 )]
+position = Vector2( 92.1591, 270.228 )
+z_index = 1
+
+[node name="Rubble5" type="Node2D" parent="YSort/YSort" instance=ExtResource( 4 )]
+position = Vector2( 131.984, 172.388 )
+
+[node name="Rubble 2" type="Node2D" parent="YSort/YSort" instance=ExtResource( 3 )]
+position = Vector2( 75.2602, 196.349 )
+
+[node name="Rubble 3" type="Node2D" parent="YSort/YSort" instance=ExtResource( 3 )]
+position = Vector2( 199.935, 330.532 )
+
+[node name="Rubble 6" type="Node2D" parent="YSort/YSort" instance=ExtResource( 3 )]
+position = Vector2( 105.838, 286.531 )
+z_index = 1
+
+[node name="Rubble 4" type="Node2D" parent="YSort/YSort" instance=ExtResource( 3 )]
+position = Vector2( 397.744, 239.656 )
+
+[node name="Rubble 5" type="Node2D" parent="YSort/YSort" instance=ExtResource( 3 )]
+position = Vector2( 320.599, 111.917 )
+
+[node name="Bush" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 186.468, 293.562 )
+
+[node name="Bush2" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 354.353, 263.324 )
+
+[node name="Bush3" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 287.262, 205.682 )
+
+[node name="Bush4" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 247.889, 366.007 )
+
+[node name="Bush5" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 387.426, 388.686 )
+
+[node name="Bush6" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 489.813, 156.132 )
+
+[node name="Bush7" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 465.209, 79.1428 )
+
+[node name="Bush39" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 521.562, 125.971 )
+
+[node name="Bush40" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 585.851, 172.006 )
+
+[node name="Bush8" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 181.114, 357.818 )
+
+[node name="Bush9" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 188.043, 359.393 )
+
+[node name="Bush10" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 347.738, 261.749 )
+
+[node name="Bush11" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 19.7331, 378.653 )
+
+[node name="Bush12" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 14.5741, 385.399 )
+
+[node name="Bush13" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 26.8764, 389.367 )
+
+[node name="Bush14" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 84.4197, 155.623 )
+
+[node name="Bush15" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 255.065, 181.021 )
+
+[node name="Bush16" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 316.18, 159.988 )
+
+[node name="Bush17" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 389.994, 191.339 )
+
+[node name="Bush18" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 219.746, 113.557 )
+
+[node name="Bush19" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 232.842, 215.15 )
+
+[node name="Bush20" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 136.01, 140.146 )
+
+[node name="Bush21" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 339.594, 62.3629 )
+
+[node name="Bush22" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 291.576, 34.5834 )
+
+[node name="Bush23" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 104.262, 42.1235 )
+
+[node name="Bush24" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 54.2591, 42.5204 )
+
+[node name="Bush25" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 23.3048, 51.2511 )
+
+[node name="Bush26" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 59.4181, -0.339462 )
+
+[node name="Bush27" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 114.183, -0.339462 )
+
+[node name="Bush28" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 93.9441, -34.8654 )
+
+[node name="Bush29" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 244.35, 4.81959 )
+
+[node name="Bush30" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 200.697, -2.32372 )
+
+[node name="Bush31" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 327.292, 13.1534 )
+
+[node name="Bush32" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 369.358, 1.24793 )
+
+[node name="Bush33" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 189.585, -76.9316 )
+
+[node name="Bush34" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 204.665, -56.6922 )
+
+[node name="Bush35" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 149.9, -75.741 )
+
+[node name="Bush36" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 162.202, -61.4544 )
+
+[node name="Bush37" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 86.8009, -61.4544 )
+
+[node name="Bush38" type="Node2D" parent="YSort/YSort" instance=ExtResource( 2 )]
+position = Vector2( 35.6072, -72.9631 )

@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Art/Board.png" type="Texture" id=1]
 [ext_resource path="res://Art/BackGround.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/PixelFont2.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://Art/StatShow.png" type="Texture" id=5]
+[ext_resource path="res://Art/Loading.png" type="Texture" id=6]
 
 [node name="MainMenu" type="Node2D"]
+pause_mode = 2
 position = Vector2( 0, -400 )
 script = ExtResource( 4 )
 
@@ -17,30 +20,512 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" type="TextureButton" parent="TextureRect"]
+[node name="GridContainer" type="GridContainer" parent="TextureRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -75.0
-margin_top = -25.0
+margin_top = -131.0
 margin_right = 75.0
-margin_bottom = 25.0
+margin_bottom = 135.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="TextureButton" parent="TextureRect/GridContainer"]
+margin_right = 150.0
+margin_bottom = 50.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TextureRect/Play"]
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Play"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -1.0
+margin_bottom = -3.0
 custom_fonts/font = ExtResource( 3 )
 text = "Play"
 align = 1
 valign = 1
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="TextureRect/Play" to="." method="_on_Play_pressed"]
+
+[node name="Instructions" type="TextureButton" parent="TextureRect/GridContainer"]
+margin_top = 54.0
+margin_right = 150.0
+margin_bottom = 104.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Instructions"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "How To Play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="TextureButton" parent="TextureRect/GridContainer"]
+margin_top = 108.0
+margin_right = 150.0
+margin_bottom = 158.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Options"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Support Boosts" type="TextureButton" parent="TextureRect/GridContainer"]
+margin_top = 162.0
+margin_right = 150.0
+margin_bottom = 212.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Support Boosts"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Premium Boosts"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="TextureButton" parent="TextureRect/GridContainer"]
+margin_top = 216.0
+margin_right = 150.0
+margin_bottom = 266.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Credits"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monitization_Info" type="TextureRect" parent="."]
+margin_left = 600.0
+margin_top = -1.33636
+margin_right = 1200.0
+margin_bottom = 398.664
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Monitization_Info"]
+margin_left = 162.592
+margin_top = 58.251
+margin_right = 450.592
+margin_bottom = 346.251
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Monitization_Info/TextureRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 10.0
+margin_right = -11.0
+margin_bottom = -13.0
+custom_fonts/font = ExtResource( 3 )
+text = "Premium Boosts:
++2x gold per click
++3 Treasure Slots
++1 Artifact Slot
++10,000 gold for each treasure sold
++5,000 gold for each Artifact sold
+
+How to get Premium Boosts?
+Sign up and enable Coil
+
+This game utilizes Web Monetization. A new way to help support developers and content creators. "
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Monitization_Info/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 11.4702
+margin_right = -11.0
+margin_bottom = -15.5298
+custom_fonts/mono_font = ExtResource( 3 )
+custom_fonts/bold_italics_font = ExtResource( 3 )
+custom_fonts/italics_font = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[u]Premium Boosts:[/u]
++2x gold per click
++3 Treasure Slots
++1 Artifact Slot
++10,000 gold for each Treasure sold
++15,000 gold for each Artifact sold
+
+[u]How to get Premium Boosts?[/u]
+Sign up and enable [url=\"https://coil.com/\"]Coil[/url] in your browser. Boost will only be active while Coil is active. Game may need to be restarted if Coil is activated while it running
+
+
+[u]What is this?[/u]
+This game utilizes [url=\"https://webmonetization.org/\"]Web Monetization[/url].  A new non-intrusive to help support developers and content creators and allows you the player to unlock addtional perks and content. These boosts are meant to be entirly optional. All context is avaiable for free from the start. 
+[/center]"
+text = "
+Premium Boosts:
++2x gold per click
++3 Treasure Slots
++1 Artifact Slot
++10,000 gold for each Treasure sold
++15,000 gold for each Artifact sold
+
+How to get Premium Boosts?
+Sign up and enable Coil in your browser. Boost will only be active while Coil is active. Game may need to be restarted if Coil is activated while it running
+
+
+What is this?
+This game utilizes Web Monetization.  A new non-intrusive to help support developers and content creators and allows you the player to unlock addtional perks and content. These boosts are meant to be entirly optional. All context is avaiable for free from the start. 
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Monitization_Info"]
+margin_right = 46.0
+margin_bottom = 46.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Monitization_Info/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+align = 1
+valign = 1
+
+[node name="Instructions" type="TextureRect" parent="."]
+margin_left = -600.0
+margin_bottom = 400.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="Instructions"]
+margin_right = 46.0
+margin_bottom = 46.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Instructions/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Instructions"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = -186.0
+margin_right = 186.0
+margin_bottom = 186.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Instructions/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 16.0
+margin_right = -15.0
+margin_bottom = -19.0
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[u]How to Play[/u]
+
+Game Data is saved when you leave the game
+
+You can check a ruins stats by hovering your mouse over the ruin.
+
+Each time ruin is clicked it will give you a set amount of gold. This amount can be upgraded from the menu on the right.
+
+Eeach minecrart will bring back 1 click worth of gold every second. The speed of the minecarts can be increased to get gold multiple times a second.
+
+Unlocking a new floor will increase the ruins stats
+
+Activating an artifact will reset the stats of the ruin as well as all purchase upgrades. The listed buff will be applied at the begining of each reset. Tresures will be kept during the reset but any other artifacts will be destroyed
+
+Treasure can be randomly found. The chance to get Treasure can be found in the ruins stats. Treasure can be sold to gain gold quickly.
+[/center]"
+text = "
+How to Play
+
+Game Data is saved when you leave the game
+
+You can check a ruins stats by hovering your mouse over the ruin.
+
+Each time ruin is clicked it will give you a set amount of gold. This amount can be upgraded from the menu on the right.
+
+Eeach minecrart will bring back 1 click worth of gold every second. The speed of the minecarts can be increased to get gold multiple times a second.
+
+Unlocking a new floor will increase the ruins stats
+
+Activating an artifact will reset the stats of the ruin as well as all purchase upgrades. The listed buff will be applied at the begining of each reset. Tresures will be kept during the reset but any other artifacts will be destroyed
+
+Treasure can be randomly found. The chance to get Treasure can be found in the ruins stats. Treasure can be sold to gain gold quickly.
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="TextureRect" parent="."]
+margin_left = 0.400024
+margin_top = -400.0
+margin_right = 600.4
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="Credits"]
+margin_right = 46.0
+margin_bottom = 46.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Credits/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Credits"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.5
+margin_top = -160.5
+margin_right = 160.5
+margin_bottom = 160.5
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 16.0
+margin_right = -15.0
+margin_bottom = -19.0
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[u]Credits[/u]
+
+Art:
+ Hunter Movius
+Code: 
+Hunter Movius
+Gameplay: 
+Hunter Movius
+
+Music: 
+midwinter by airtone (c) copyright 2018 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/airtone/58902 Ft: onlymeith
+
+Special thanks to my amazing family for being my playtesters
+[/center]"
+text = "
+Credits
+
+Art:
+ Hunter Movius
+Code: 
+Hunter Movius
+Gameplay: 
+Hunter Movius
+
+Music: 
+midwinter by airtone (c) copyright 2018 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/airtone/58902 Ft: onlymeith
+
+Special thanks to my amazing family for being my playtesters
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="TextureRect" parent="."]
+margin_left = -600.0
+margin_top = -400.0
+margin_bottom = -3.05176e-05
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="Options"]
+margin_right = 46.0
+margin_bottom = 46.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Options/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Options"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.5
+margin_top = -160.5
+margin_right = 160.5
+margin_bottom = 160.5
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Options/TextureRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -74.5
+margin_top = 18.0
+margin_right = 75.5
+margin_bottom = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset_data" type="TextureButton" parent="Options/TextureRect/GridContainer"]
+margin_right = 150.0
+margin_bottom = 50.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Options/TextureRect/GridContainer/Reset_data"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Reset Save Data"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResartGame" type="TextureRect" parent="Options"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Options/ResartGame"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -87.5
+margin_top = -7.0
+margin_right = 87.5
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 3 )
+text = "Please Restart/Refresh The Game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TextureRect/GridContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="TextureRect/GridContainer/Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="TextureRect/GridContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="TextureRect/GridContainer/Support Boosts" to="." method="_on_Support_Boosts_pressed"]
+[connection signal="pressed" from="TextureRect/GridContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="meta_clicked" from="Monitization_Info/TextureRect/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="pressed" from="Monitization_Info/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Instructions/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Credits/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Options/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Options/TextureRect/GridContainer/Reset_data" to="." method="_on_Reset_data_pressed"]

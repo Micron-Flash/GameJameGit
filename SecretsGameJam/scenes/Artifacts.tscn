@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Art/Empty Slot.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/PixelFont2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Art/Board.png" type="Texture" id=3]
+[ext_resource path="res://Art/Artifacts1.png" type="Texture" id=4]
+[ext_resource path="res://Art/Artifacts2.png" type="Texture" id=5]
+[ext_resource path="res://Art/Artifacts3.png" type="Texture" id=6]
+[ext_resource path="res://scenes/ArtifactsSlot.gd" type="Script" id=7]
+[ext_resource path="res://Art/Artifacts4.png" type="Texture" id=8]
+[ext_resource path="res://Art/Artifacts5.png" type="Texture" id=9]
+
+[sub_resource type="ButtonGroup" id=1]
+resource_local_to_scene = false
+
+[node name="Artifacts" type="TextureRect"]
+margin_right = 18.0
+margin_bottom = 18.0
+texture = ExtResource( 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="."]
+margin_left = 1.07874
+margin_top = 0.867569
+margin_right = 17.0787
+margin_bottom = 16.8676
+toggle_mode = true
+shortcut_in_tooltip = false
+group = SubResource( 1 )
+texture_pressed = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Empty" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+
+[node name="1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 4 )
+centered = false
+
+[node name="2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+centered = false
+
+[node name="3" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 6 )
+centered = false
+
+[node name="4" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 8 )
+centered = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -0.354041
+margin_top = 17.6063
+margin_right = 112.646
+margin_bottom = 51.6063
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "+.03s mincart speed
+Sell: 10,000 Gold"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_Button_mouse_exited"]
+[connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]

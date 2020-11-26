@@ -11,6 +11,7 @@ onready var description = $Description
 onready var info_button = $TextureButton
 
 func _ready():
+	load_data()
 	update_description()
 	self.modulate = Color(1,1,1,1)
 	self.disabled = true
@@ -41,6 +42,7 @@ func _on_Upgrade4_pressed():
 		current_level += 1
 		if current_level >= max_levels:
 			self.hide()
+		save_data()
 
 func update_description():
 	description.text = "Increase minecarts speed\nby .01s\n"+ comma_sep(cost) + " Gold"
@@ -63,3 +65,36 @@ func _on_TextureButton_toggled(button_pressed):
 		description.text = "Decreases the amount of time\nit takes for minecarts\nto bring back gold"
 	else:
 		update_description()
+
+func save_data():
+	var file = File.new()
+	if file.open("user://Upgrade4.sav", File.WRITE) != 0:
+		print("Error opening file")
+		return
+	var data = {
+	"current_level":current_level,
+	"cost":cost
+	}
+	print(data["cost"])
+	file.store_line(to_json(data))
+	file.close()
+	
+	
+func load_data():
+	print("Loading Upgrade")
+	var file = File.new()
+	if not file.file_exists("user://Upgrade4.sav"):
+		print("No file saved!")
+		return
+		
+	if file.open("user://Upgrade4.sav", File.READ) != 0:
+		print("Error opening file")
+		file.close()
+		return
+		
+	var load_data = {}
+	load_data = parse_json(file.get_line())
+	print(load_data["cost"])
+	current_level = load_data["current_level"]
+	cost = load_data["cost"]
+	file.close()

@@ -1,8 +1,49 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=16 format=2]
 
+[ext_resource path="res://Art/StatShow.png" type="Texture" id=1]
 [ext_resource path="res://Art/Board.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Treasures.gd" type="Script" id=3]
 [ext_resource path="res://Fonts/PixelFont2.tres" type="DynamicFont" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="Theme" id=11]
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/grabber = SubResource( 1 )
+HScrollBar/styles/grabber_highlight = SubResource( 2 )
+HScrollBar/styles/grabber_pressed = SubResource( 3 )
+HScrollBar/styles/scroll = SubResource( 4 )
+HScrollBar/styles/scroll_focus = SubResource( 5 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 6 )
+VScrollBar/styles/grabber_highlight = SubResource( 7 )
+VScrollBar/styles/grabber_pressed = SubResource( 8 )
+VScrollBar/styles/scroll = SubResource( 9 )
+VScrollBar/styles/scroll_focus = SubResource( 10 )
 
 [node name="Treasures" type="Node2D"]
 script = ExtResource( 3 )
@@ -12,25 +53,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 68.0
-margin_top = 38.0
-margin_right = 532.0
-margin_bottom = 362.0
+margin_left = 11.0
+margin_top = 48.0
+margin_right = 311.0
+margin_bottom = 390.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-margin_right = 464.0
-margin_bottom = 324.0
-texture = ExtResource( 2 )
+margin_right = 300.0
+margin_bottom = 342.0
+texture = ExtResource( 1 )
 expand = true
-stretch_mode = 7
+stretch_mode = 1
 
 [node name="Label" type="Label" parent="MarginContainer/TextureRect"]
-margin_left = 3.75255
+margin_left = 13.7526
 margin_top = -9.96614
-margin_right = 228.753
+margin_right = 238.753
 margin_bottom = 38.0339
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 4 )
@@ -41,13 +82,61 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="MarginContainer/TextureRect"]
-margin_left = 5.74916
+margin_left = 14.7492
 margin_top = 125.529
-margin_right = 230.749
+margin_right = 239.749
 margin_bottom = 171.529
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 4 )
 text = "Artifacts:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell" type="TextureButton" parent="MarginContainer/TextureRect"]
+visible = false
+margin_left = 223.178
+margin_top = 282.577
+margin_right = 280.178
+margin_bottom = 302.577
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/TextureRect/Sell"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Sell"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Activate" type="TextureButton" parent="MarginContainer/TextureRect"]
+visible = false
+margin_left = 164.249
+margin_top = 282.857
+margin_right = 221.249
+margin_bottom = 302.857
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/TextureRect/Activate"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Activate"
+align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -58,48 +147,49 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 86.5051
-margin_top = 91.5389
-margin_right = 297.505
-margin_bottom = 138.539
+margin_left = 34.0
+margin_top = 101.0
+margin_right = 171.0
+margin_bottom = 150.0
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Treasure"]
-margin_right = 210.0
-margin_bottom = 47.0
+margin_right = 137.0
+margin_bottom = 49.0
+theme = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Spots" type="GridContainer" parent="Treasure/ScrollContainer"]
-columns = 10
+columns = 6
 
 [node name="Artifacts" type="MarginContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 84.2576
-margin_top = 230.132
-margin_right = 295.258
-margin_bottom = 277.132
+margin_left = 36.0
+margin_top = 247.0
+margin_right = 173.0
+margin_bottom = 289.0
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Artifacts"]
-margin_right = 211.0
-margin_bottom = 46.0
+margin_right = 137.0
+margin_bottom = 42.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Spots" type="GridContainer" parent="Artifacts/ScrollContainer"]
-columns = 10
+columns = 6
 
 [node name="Back" type="TextureButton" parent="."]
 margin_right = 42.0
@@ -117,4 +207,7 @@ custom_fonts/font = ExtResource( 4 )
 text = "Back"
 align = 1
 valign = 1
+
+[connection signal="pressed" from="MarginContainer/TextureRect/Sell" to="." method="_on_Sell_pressed"]
+[connection signal="pressed" from="MarginContainer/TextureRect/Activate" to="." method="_on_Activate_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

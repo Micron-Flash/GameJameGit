@@ -16,13 +16,16 @@ polygon = PoolVector2Array( 101.022, 90.0017, 94.1529, 101.786, 106.951, 95.4365
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 44.9715, 44.0655, 77.4528, 59.6396, 111.127, 43.5042, 78.4349, 26.5971 )
 
-[node name="Ruins1" type="Node2D"]
+[node name="Ruins1" type="Node2D" groups=[
+"Ruins",
+]]
 position = Vector2( 0.176979, -1.17984 )
 script = ExtResource( 3 )
-cost_to_open = 50
+cost_to_open = 20
 first_floor_cost = 75
 
 [node name="Campsite" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 183.742, 55.9559 )
 
 [node name="Door" type="Sprite" parent="."]
@@ -55,10 +58,10 @@ __meta__ = {
 
 [node name="CurrentStats" type="TextureRect" parent="."]
 process_priority = 1
-margin_left = 27.2074
-margin_top = 161.972
-margin_right = 212.208
-margin_bottom = 236.972
+margin_left = -108.515
+margin_top = 139.748
+margin_right = 76.4852
+margin_bottom = 214.748
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -103,7 +106,7 @@ margin_right = 111.762
 margin_bottom = 69.3969
 custom_fonts/font = ExtResource( 5 )
 text = "Click To explore
-$100"
+$25"
 align = 1
 valign = 1
 __meta__ = {
@@ -120,6 +123,7 @@ occluder = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
 [connection signal="tween_completed" from="Door/Light2D/Tween" to="Door/Light2D" method="_on_Tween_tween_completed"]
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_TextureButton_mouse_exited"]

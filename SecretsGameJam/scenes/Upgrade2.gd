@@ -10,6 +10,7 @@ onready var description = $Description
 onready var info_button = $TextureButton
 
 func _ready():
+	load_data()
 	update_description()
 	self.modulate = Color(1,1,1,.25)
 	self.disabled = true
@@ -38,6 +39,7 @@ func _on_Upgrade2_pressed():
 		MoneyManager.set_ruins_rate(id,upgrade_multiplier)
 		cost = int(cost*upgrade_cost_ratio)
 		update_description()
+		save_data()
 
 
 func update_description():
@@ -61,3 +63,36 @@ func _on_TextureButton_toggled(button_pressed):
 		description.text = "Minecarts bring "+str(upgrade_multiplier)+ " click\n worth of gold every " + str(MoneyManager.get_time_mult()) + "s\nTotal Carts: " + str(MoneyManager.get_ruins_rate(id))
 	else:
 		update_description()
+
+func save_data():
+	var file = File.new()
+	if file.open("user://Upgrade2.sav", File.WRITE) != 0:
+		print("Error opening file")
+		return
+	var data = {
+	"current_level":current_level,
+	"cost":cost
+	}
+	print(data["cost"])
+	file.store_line(to_json(data))
+	file.close()
+	
+	
+func load_data():
+	print("Loading Upgrade")
+	var file = File.new()
+	if not file.file_exists("user://Upgrade2.sav"):
+		print("No file saved!")
+		return
+		
+	if file.open("user://Upgrade2.sav", File.READ) != 0:
+		print("Error opening file")
+		file.close()
+		return
+		
+	var load_data = {}
+	load_data = parse_json(file.get_line())
+	print(load_data["cost"])
+	current_level = load_data["current_level"]
+	cost = load_data["cost"]
+	file.close()

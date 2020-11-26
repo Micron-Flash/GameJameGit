@@ -7,6 +7,7 @@ onready var two = $"2"
 onready var three = $"3"
 onready var sell_board = $TextureRect
 onready var sell_board_text = $TextureRect/Label
+onready var button = $Button
 var id
 var item_id
 var base_price = {
@@ -28,13 +29,15 @@ func set_type(_id):
 	item_id = _id
 	match _id:
 		0:
-			self.texture = empty.texture
+			pass
 		1:
-			self.texture = one.texture
+			button.texture_normal = one.texture
+			
 		2:
-			self.texture = two.texture
+			button.texture_normal = two.texture
+
 		3:
-			self.texture = three.texture
+			button.texture_normal = three.texture
 
 
 func _on_Button_pressed():
@@ -47,7 +50,7 @@ func _on_Button_pressed():
 func _on_Button_mouse_entered():
 	if item_id != 0:
 		var price_mode = MoneyManager.get_treasure_price_mod()
-		sell_board_text.text = "Sell:" + str(base_price[item_id]*price_mode)+ " Gold"
+		sell_board_text.text = str(base_price[item_id]*price_mode)+ " Gold"
 		sell_board.visible = true
 
 
